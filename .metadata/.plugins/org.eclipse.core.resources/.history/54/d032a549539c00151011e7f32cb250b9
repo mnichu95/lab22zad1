@@ -1,0 +1,21 @@
+package Zadanie1;
+
+public class Main {
+	public static void main(String[] args) {
+		MyList mylist = new MyList();
+		mylist.add("a");
+		mylist.add("b");
+		mylist.add("c");
+		mylist.add("d");
+		mylist.add("e");
+		mylist.add("f");
+
+		System.out.println(mylist.firstIndexOf());
+		System.out.println(mylist.size());
+		mylist.removeFirstElement();
+		mylist.removeLastElement();
+		mylist.removeAllElement();
+
+	}
+
+}

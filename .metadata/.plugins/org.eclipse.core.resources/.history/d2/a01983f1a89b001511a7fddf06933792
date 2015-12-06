@@ -1,0 +1,37 @@
+package Zadanie1;
+
+import java.util.AbstractList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class MyList { // list of integers
+Object[] data; // list itself. null values at the end
+int capacity; // maximum capacity of the list
+int num; // current size of the list
+
+
+
+
+
+public MyList(int capacity) {
+	 this.capacity = capacity;
+	 data = new Object[capacity]; // null array
+	 num = 0;
+}
+
+public void add(Object a) {
+	 // add an object a to the end of the list
+		data[num] = a;
+		 num++;
+	
+}
+
+public int size() {
+	
+	return data.length;
+}
+
+
+
+}

@@ -1,0 +1,18 @@
+package Zadanie1;
+
+public class Main {
+	public static void main(String[] args) {
+		MyList mylist = new MyList();
+		mylist.isEmpty();
+		
+
+		
+		System.out.println(mylist.firstIndexOf());
+		System.out.println(mylist.size());
+		mylist.removeFirstElement();
+		mylist.removeLastElement();
+		mylist.removeAllElement();
+
+	}
+
+}

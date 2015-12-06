@@ -1,0 +1,18 @@
+package Zadanie1;
+
+public class Main {
+	public static void main(String[] args) {
+	MyList mylist= new MyList();
+	mylist.add("dupa");
+	mylist.add("asd");
+	mylist.add("asds");
+	mylist.add("asddd");
+
+	
+	System.out.println(mylist.size());
+	mylist.deleteFirstElement();
+	System.out.println(mylist.get(0));
+
+	}
+
+}

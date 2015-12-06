@@ -1,0 +1,49 @@
+package Zadanie1;
+
+import java.util.AbstractList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class MyList { // list of integers
+Object[] data; // list itself. null values at the end
+int capacity; // maximum capacity of the list
+int num; // current size of the list
+static final int DEFAULT_CAPACITY = 100;
+
+
+public MyList() {
+	 this(DEFAULT_CAPACITY); // call MyList(capacity).
+}
+
+
+public MyList(int capacity) {
+	 this.capacity = capacity;
+	 data = new Object[capacity]; // null array
+	 num = 0;
+}
+
+public void add(Object a) {
+	 // add an object a to the end of the list
+		data[num] = a;
+		 num++;
+	
+}
+
+
+public void deleteFirstElement() {
+	 // delete first element from the list
+	 for (int i = num-1; i > 0; i--) {
+		 data[i-1] = data[i];
+	 }
+	 num--;
+}
+
+public int size() {
+	
+	return data.length;
+}
+
+
+
+}

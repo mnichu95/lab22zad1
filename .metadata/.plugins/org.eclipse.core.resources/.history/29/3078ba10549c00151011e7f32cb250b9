@@ -1,0 +1,89 @@
+package Zadanie1;
+
+import java.util.Scanner;
+
+public class MyList {
+	static final int DEFAULT_VOLUME = 50;
+	Object[] array; 
+	int number;
+	int volume;
+
+	public MyList() {
+		this(DEFAULT_VOLUME); 
+	}
+
+	public MyList(int volume) {
+		this.volume = volume;
+		array = new Object[volume];
+		number = 0;
+	}
+
+	public int firstIndexOf() {
+		String text = "c";
+		int l = -1;
+		for (int i = 0; i < number; i++) {
+			l++;
+			if (array[i].equals(text)) {
+				break;
+			}
+		}
+		return l;
+
+	}
+
+	public void add(Object a) {
+		array[number] = a;
+		number++;
+
+	}
+
+	public Object get(int index) {
+
+		if (index < 0 || index >= number) {
+			throw new RuntimeException(" out of bounds");
+		}
+		return array[index];
+	}
+
+	public void removeAllElement() {
+		for (int i = number - 1; i >= 0; i--) {
+			array[i] = null;
+		}
+	}
+
+	public void removeFirstElement() {
+	 	 for (int i = number-1; i > 0; i--) {
+			 array[i-1] = array[i];
+	 	 }
+	 	 number--;
+}
+	
+	public void removeLastElement() {
+
+		if (number == 0) {
+			throw new RuntimeException("list is empty: cannot delete");
+		}
+		number--;
+		array[number] = null;
+	}
+
+	public boolean isEmpty() {
+		for (int i = 0; i < number; i++) {
+			if (array[i].equals(null)) {
+			}
+			else {
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	
+	public int size() {
+
+		return array.length;
+	}
+
+
+
+}

@@ -1,0 +1,84 @@
+package Zadanie1;
+
+import java.util.Scanner;
+
+public class MyList {
+	Object[] array; // list itself. null values at the end
+	int number;
+	int volume;
+	static final int DEFAULT_VOLUME = 50;
+
+	public MyList() {
+		this(DEFAULT_VOLUME); // call MyList(capacity).
+	}
+
+	public MyList(int volume) {
+		this.volume = volume;
+		array = new Object[volume];
+		number = 0;
+	}
+
+	public int firstIndexOf() {
+		String text = readLine();
+		int l = -1;
+		for (int i = 0; i < number; i++) {
+			l++;
+			if (array[i].equals(text)) {
+
+				break;
+			}
+		}
+
+		return l;
+
+	}
+
+	public void add(Object a) {
+		array[number] = a;
+		number++;
+
+	}
+
+	public Object get(int index) {
+
+		if (index < 0 || index >= number) {
+			throw new RuntimeException("index out of bounds");
+		}
+		return array[index];
+	}
+
+	public void removeAllElement() {
+		for (int i = number - 1; i >= 0; i--) {
+			array[i] = null;
+		}
+	}
+
+	public void removeFirstElement() {
+		for (int i = 0; i < number - 1; i++) {
+			array[i] = array[i + 1];
+		}
+		array[number - 1] = null;
+		number--;
+	}
+
+	public void removeLastElement() {
+
+		if (number == 0) {
+			throw new RuntimeException("list is empty: cannot delete");
+		}
+		number--;
+		array[number] = null;
+	}
+
+	public int size() {
+
+		return array.length;
+	}
+
+	public String readLine() {
+		Scanner scanner = new Scanner(System.in);
+		String text = scanner.nextLine();
+		return text;
+	}
+
+}

@@ -1,0 +1,81 @@
+package Zadanie1;
+
+import java.util.AbstractList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class MyList { // list of integers
+Object[] data; // list itself. null values at the end
+int capacity; // maximum capacity of the list
+int num; // current size of the list
+static final int DEFAULT_CAPACITY = 100;
+
+
+public MyList() {
+	 this(DEFAULT_CAPACITY); // call MyList(capacity).
+}
+
+
+public MyList(int capacity) {
+	 this.capacity = capacity;
+	 data = new Object[capacity]; // null array
+	 num = 0;
+}
+
+
+
+public void add(Object a) {
+	 // add an object a to the end of the list
+		data[num] = a;
+		 num++;
+	
+}
+
+public Object get(int index) {
+	 // find the element at given index
+if (index < 0 || index >= num) {
+throw new RuntimeException("index out of bounds");
+}
+	 return data[index];
+}
+
+
+
+public void deleteFirstElement() {
+	 // delete first element from the list
+	 for (int i = 0; i < num-1; i++) {
+		 data[i] = data[i+1];
+	 }
+data[num-1] = null;
+	 num--; 
+}
+
+public void deleteLastElement() {
+	 // delete the last element from the list
+	 // fill in the code in the class.
+if (num == 0) {
+throw new RuntimeException("list is empty: cannot delete");
+}
+num--;
+data[num] = null;
+}
+
+
+
+
+public void deleteAllElement() {
+	 // delete first element from the list
+	 for (int i = num-1; i >= 0; i--) {
+		data[i]=null;
+	 }
+}
+
+public int size() {
+	
+	return data.length;
+}
+
+
+
+}
